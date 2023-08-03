@@ -17,13 +17,13 @@ const returnProdcuts = products.filter((p)=> {
 
 
 ---
-<section class="my-8">
+<section class="my-8 select-none">
 
   <div class="text-4xl md:text-6xl py-3 title">{collection}</div>
   <div class=" mySwiper w-full  my-2 overflow-hidden ">
     <div class="swiper-wrapper w-full p-2">
       {
-    returnProdcuts.map((p)=>     <div class="swiper-slide w-full"><ProductCard product={p}/></div>
+    returnProdcuts.map((p)=>     <div class="swiper-slide w-full flex justify-center items-center p-3"><ProductCard product={p}/></div>
  )
   }   
     
@@ -31,11 +31,3 @@ const returnProdcuts = products.filter((p)=> {
 </div>
 </section>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-<script is:inline src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-<script is:inline>new Swiper('.mySwiper',{
- slidesPerView: 3,
-      spaceBetween: 30,
-      grabCursor: true,
-      
-})</script>

@@ -8,6 +8,7 @@ import { getAllCollections } from "../utils/Functions";
 import { setCache } from "../utils/cache";
 import { getCollec, getProducts } from "../utils/shopify";
 import '@fontsource/arapey';
+import Serviceoffers from "../components/serviceoffers.astro";
 const headers = Astro.request.headers;
 const ip = headers.get("x-vercel-forwarded-for") || Astro.clientAddress;
 const c = await getCollec({buyerIP:ip})
@@ -28,8 +29,8 @@ setCache.short(Astro);
     <p class="text-5xl md:text-8xl  border-b-2 border-gray-200   py-3 title">Collections</p>
     <AllCollections collections={allCollections}  />
   </div>
-  <div class="w-full">
-    <Products products={products}/>
+  <div class="w-full" >
+    <Products products={products} />
   <div class="">
     <p class="text-5xl md:text-8xl  title py-7">By Category </p>
 
@@ -41,6 +42,31 @@ setCache.short(Astro);
       })
     }
   </div>
+  <div>
+    <Serviceoffers />
+  </div>
  
 </section>
 </BaseLayout>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+<script is:inline src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script is:inline>new Swiper('.mySwiper',{
+  autoplay: {
+    slidesPerView: 1,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 40,
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 50,
+    },
+  },
+})</script>

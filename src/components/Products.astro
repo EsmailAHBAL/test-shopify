@@ -2,6 +2,7 @@
 import { z } from "zod";
 import { ProductResult } from "../utils/schemas";
 import ProductCard from "./ProductCard.astro";
+import Collect from "./collect.astro";
 
 const ProductsResult = z.array(ProductResult);
 export interface Props {
@@ -13,35 +14,13 @@ const { products } = Astro.props as Props;
 
 
 
-<div class=" mySwiper  overflow-hidden">
-  <div class="swiper-wrapper ">
-  {
-    products.map((p)=><div class="swiper-slide p-2"><ProductCard product={p}/></div>
- )
-  }   
-    
+<div class="mySwiper overflow-hidden">
+  <div class="swiper-wrapper w-full h-full "> 
+    {
+      products.map((item:any)=> (
+      <div class="swiper-slide p-4 flex justify-center items-center w-full absolute"><ProductCard product={item} /></div>
+      ))
+   }
   </div>
-  <div class="swiper-pagination"></div>
 </div>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-<script is:inline src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-<script is:inline>new Swiper('.mySwiper',{
-      slidesPerView: 1,
-      spaceBetween: 20,
-      breakpoints: {
-      640: {
-        slidesPerView: 1,
-        spaceBetween: 20,
-      },
-      768: {
-        slidesPerView: 3,
-        spaceBetween: 40,
-      },
-      1024: {
-        slidesPerView: 4,
-        spaceBetween: 50,
-      },
-      }
-     
-})</script>

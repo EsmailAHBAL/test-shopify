@@ -10,7 +10,7 @@ export interface Props {
 }
 const { product } = Astro.props as Props;
 ---
-<a href={`/products/${product?.title}`} class="group block overflow-hidden shadow-sm my-4 shadow-black p-2">
+<a href={`/products/${product?.title}`} class="group block overflow-hidden shadow-sm my-4 shadow-black p-2 w-[500px]">
   <div class="relative h-[350px] sm:h-[450px]">
     <ShopifyImage
     classList=""
@@ -48,6 +48,4 @@ const { product } = Astro.props as Props;
   </div>
 </a>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-<script is:inline src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-<script is:inline>new Swiper('.swiper')</script>
+
