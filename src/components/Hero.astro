@@ -1,11 +1,25 @@
 ---
+import TextTransition, { presets } from 'react-text-transition';
 
+const TEXTS = ['Forest', 'Building', 'Tree', 'Color'];
+let index = 0;
+
+setTimeout(()=> {
+ index =+ 1
+},200)
 ---
 
-<section class="  bg-[url('https://format.creatorcdn.com/dc036b7d-bdc0-4685-9f48-3e1d4c988953/0/0/0/0,0,3729,2373,2000,1272/0-0-0/441ccf09-df1e-41ea-b116-1f960819fd7e/1/2/BV-0920-Stack_563_001_15B_MF_CROP_H.jpg?fjkss=exp=2006453133~hmac=324f8f41b31f4ce3c6bd0baca155f2a02acbfba7f6a3d0132297057ce6a92b8d')] 
+<section class="  bg-[url('./hero.png')]
 w-full h-[60vh] 
-md:h-[120vh] bg-cover bg-top p-4 md;bg-top rounded-xl border border-black opacity-95">
-<div class="flex justify-center items-center w-full h-full opacity-100">
- hello
+md:h-[120vh] bg-cover bg-center p-10  rounded-xl border border-black opacity-95">
+<div class="flex justify-start items-center w-full h-full opacity-100 animate-pulse">
+ <div class="">
+  <p class="text-3xl py-4 ">
+   Welcome to our exquisite jewelry store in Morocco  </p>
+   <p class="text-sm py-4">Always With Yoou</p>
+  <div class="py-6 animate-bounce duration-0 transition-all">
+   <button class="border border-black px-6 bg-black text-white">Shop now !! </button>
+  </div>
+ </div>
 </div>
 </section>

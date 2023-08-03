@@ -10,7 +10,7 @@ export interface Props {
 }
 const { products,collection } = Astro.props as Props;
 const returnProdcuts = products.filter((p)=> {
-  const isTrue = p?.collections.find((c)=> c.title === collection)
+  const isTrue = p?.collections.find((c:any)=> c.title === collection)
  if(isTrue) return p  
   return 
 })
@@ -20,15 +20,14 @@ const returnProdcuts = products.filter((p)=> {
 <section class="my-8">
 
   <div class="text-4xl md:text-6xl py-3 title">{collection}</div>
-  <div class=" mySwiper w-full  my-2 overflow-hidden">
+  <div class=" mySwiper w-full  my-2 overflow-hidden ">
     <div class="swiper-wrapper w-full p-2">
       {
-    returnProdcuts.map((p)=>     <div class="swiper-slide"><ProductCard product={p}/></div>
+    returnProdcuts.map((p)=>     <div class="swiper-slide w-full"><ProductCard product={p}/></div>
  )
   }   
     
   </div>
-  <div class="swiper-pagination"></div>
 </div>
 </section>
 
@@ -38,4 +37,5 @@ const returnProdcuts = products.filter((p)=> {
  slidesPerView: 3,
       spaceBetween: 30,
       grabCursor: true,
+      
 })</script>

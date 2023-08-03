@@ -5,7 +5,7 @@ export interface Props {
 }
 const {collections} = Astro.props as Props
 ---
-<div class={`grid grid-cols-1  md:grid-cols-${collections.length} gap-x-3 gap-y-3 w-full select-none`}>
+<div class={`grid grid-cols-1  md:grid-cols-${collections.length} gap-x-3 gap-y-3 w-full select-none px-3`}>
      
  {
    collections.map((item)=> <Collect c={item}/> )
