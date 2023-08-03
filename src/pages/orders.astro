@@ -2,12 +2,10 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { ByCollections } from "../utils/Functions";
 import { getProducts } from "../utils/shopify";
-import OrdesC from "../components/orderS"
 const data =  await getProducts({limit:20,buyerIP:''})
 const byRings = ByCollections(data,"Rings")
 ---
 <BaseLayout title="orders">
- <OrdesC />
 { 
  JSON.stringify(byRings) 
 }
