@@ -27,6 +27,21 @@ const { products } = Astro.props as Props;
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 <script is:inline src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script is:inline>new Swiper('.mySwiper',{
- slidesPerView: 3,
+      slidesPerView: 1,
       spaceBetween: 20,
+      breakpoints: {
+      640: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 40,
+      },
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 50,
+      },
+      }
+     
 })</script>
