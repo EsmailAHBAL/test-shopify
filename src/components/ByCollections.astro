@@ -1,0 +1,41 @@
+---
+import { z } from "zod";
+import { ProductResult } from "../utils/schemas";
+import ProductCard from "./ProductCard.astro";
+
+const ProductsResult = z.array(ProductResult);
+export interface Props {
+  products: z.infer<typeof ProductsResult>,
+    collection:string
+}
+const { products,collection } = Astro.props as Props;
+const returnProdcuts = products.filter((p)=> {
+  const isTrue = p?.collections.find((c)=> c.title === collection)
+ if(isTrue) return p  
+  return 
+})
+
+
+---
+<section class="my-8">
+
+  <div class="text-4xl md:text-6xl py-3 title">{collection}</div>
+  <div class=" mySwiper w-full  my-2 overflow-hidden">
+    <div class="swiper-wrapper w-full p-2">
+      {
+    returnProdcuts.map((p)=>     <div class="swiper-slide"><ProductCard product={p}/></div>
+ )
+  }   
+    
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+</section>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+<script is:inline src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script is:inline>new Swiper('.mySwiper',{
+ slidesPerView: 3,
+      spaceBetween: 30,
+      grabCursor: true,
+})</script>

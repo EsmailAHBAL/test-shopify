@@ -1,10 +1,38 @@
+export const COLLECTIONS = `#graphql 
+{
+    collections(first: 250) {
+      edges {
+        node {
+          id
+          title
+          handle
+          description
+          products(first: 250) {
+            edges {
+              node {
+                id
+                title
+                priceRange {
+                  minVariantPrice {
+                    amount
+                    currencyCode
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
 const CART_FRAGMENT = `#graphql
 fragment cartFragment on Cart {
   id
   totalQuantity
   checkoutUrl
   cost {
-    subtotalAmount {
+    totalAmount {
       amount
       currencyCode
     }
@@ -53,6 +81,7 @@ fragment productFragment on Product {
   id
   title
   handle
+  description
   images (first: 10) {
     nodes {
       url
@@ -79,6 +108,14 @@ fragment productFragment on Product {
     height
     altText
   }
+  collections(first: 200) {
+      edges {
+        node {
+          id
+          title
+        }
+      }
+    }
 }
 `;
 

@@ -1,0 +1,26 @@
+---
+import {Icon} from 'astro-icon'
+const Accounts : {name:string,url:string} [] = [
+ {name:'facebook',url:''},
+ {name:'whatsapp',url:''},
+ {name:'instagram',url:''},
+ {name:'snapchat',url:''},
+]
+---
+<div class="">
+ <div class=" text-5xl md:text-8xl   py-2 my-6 title">Our Accounts </div>
+ <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-2">
+  {
+   Accounts.map(a => (
+    <div class="border border-black  p-4">
+        <p class="first-letter:uppercase first-letter:text-4xl first-letter:px-2 first-letter:font-bold">{a.name}</p>
+        
+        <div class="w-40 h-60 flex items-end">
+         <Icon name={a.name} pack="mdi"/>
+
+         </div>     
+     </div>
+   ))
+  }
+ </div>
+</div>

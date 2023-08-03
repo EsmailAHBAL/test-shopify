@@ -1,0 +1,8 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import {cart,initCart}from '../stores/cart'
+const data = JSON.parse(localStorage.cart)
+---
+<BaseLayout title='checkout'>
+{JSON.stringify(data)}
+</BaseLayout>

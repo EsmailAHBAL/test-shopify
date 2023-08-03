@@ -1,17 +1,55 @@
 ---
-import { getProducts } from "./../utils/shopify";
+import { getProducts,getCollec } from "./../utils/shopify";
+import {ByCollections, getAllCollections} from "../utils/Functions"
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Products from "../components/Products.astro";
+import Service from "../components/serviceoffers.astro" 
 import { setCache } from "../utils/cache";
-
+import Hero from "../components/Hero.astro";
+import AllCollectioins from "../components/AllCollections";
+import  ByCollectionsC  from "../components/ByCollections.astro";
+import Social from "../components/Social.astro";
+import About from "../components/about.astro";
 const title = "Astro + Shopify";
 const headers = Astro.request.headers;
 const ip = headers.get("x-vercel-forwarded-for") || Astro.clientAddress;
 const products = await getProducts({ buyerIP: ip });
+const c = await getCollec({buyerIP:ip})
+const allCollections = getAllCollections(c)
+
 
 setCache.short(Astro);
 ---
 
 <BaseLayout title={title}>
-  <Products products={products} />
+
+  <Hero />
+  <div class="my-3">
+    <About />
+  </div>
+  <div class="my-4">
+    <p class="text-5xl md:text-8xl  border-b-2 border-gray-200  py-3 title">Collections</p>
+    <AllCollectioins collections={allCollections} />
+  </div>
+  <div class="">
+    <p class="text-5xl md:text-8xl  underline-offset-8 py-4 font-[100] title ">All Products</p>
+
+  </div>
+  
+    <Products products={products}/>
+  </div>
+  <div class="">
+    <p class="text-5xl md:text-8xl  title py-7">By Category </p>
+
+    {
+      allCollections.map((c :any)=> {
+        const {title,total} = c
+        if(total === 0) return 
+        return <ByCollectionsC products={products} collection={title}/>
+      })
+    }
+  </div>
+ 
+  <Service />
+  <Social />
 </BaseLayout>

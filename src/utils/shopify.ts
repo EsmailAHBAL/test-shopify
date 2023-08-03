@@ -9,6 +9,7 @@ import {
   GetCartQuery,
   RemoveCartLinesMutation,
   ProductRecommendationsQuery,
+  COLLECTIONS
 } from "./graphql";
 
 // Make a request to Shopify's GraphQL API  and return the data object from the response body as JSON data.
@@ -83,14 +84,32 @@ export const getProducts = async (options: {
   if (!products) {
     throw new Error("No products found");
   }
-
-  const productsList = products.edges.map((edge: any) => edge.node);
+   
+  const productsList = products.edges.map((edge: any) => 
+  {
+    const collections = edge.node.collections.edges.map((n:any)=> n.node)
+    const data={ ...edge.node,collections}
+    return data
+  }
+  
+  );
+    
   const ProductsResult = z.array(ProductResult);
   const parsedProducts = ProductsResult.parse(productsList);
-
+ 
   return parsedProducts;
 };
-
+export const getCollec =async (options: {
+  buyerIP: string;
+}) => {
+  const {  buyerIP } = options;
+  const data = await makeShopifyRequest(
+    COLLECTIONS,
+    { first: 100 },
+    buyerIP
+  );
+return data.collections.edges  
+}
 // Get a product by its handle (slug)
 export const getProductByHandle = async (options: {
   handle: string;
@@ -104,9 +123,15 @@ export const getProductByHandle = async (options: {
     buyerIP
   );
   const { product } = data;
+  console.log(product);
+  
+  
+const collections = product.collections.edges.map((c:any)=> (c.node))  
+    
 
-  const parsedProduct = ProductResult.parse(product);
-
+  const parsedProduct = ProductResult.parse({...product,collections});
+   console.log(parsedProduct);
+   
   return parsedProduct;
 };
 

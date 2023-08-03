@@ -1,23 +1,47 @@
 ---
 import Logo from "./Logo.astro";
 import CartIcon from "./CartIcon.svelte";
+import {Icon}from "astro-icon"
+import '@fontsource/arapey';
+
 ---
 
-<header class="sticky top-0 z-40">
-  <div class="border-b bg-white/70 py-3 backdrop-blur-2xl">
-    <nav class="container grid grid-cols-3 items-center">
-      <a href="/">
-        <span class="sr-only">Logo</span>
-        <Logo />
-      </a>
-      <h1
-        class="flex justify-center text-sm font-semibold text-gray-900 sm:text-xl"
-      >
-        Astro 🧑‍🚀 Shopify
-      </h1>
-      <div class="justify-self-end">
-        <CartIcon client:load />
-      </div>
-    </nav>
+<nav class="flex justify-between items-center relative border-black border-b-2 py-1 
+ lg:px-12 px-6 lg:text-black text-white w-11/12 bg-white mx-auto">
+  <input type="checkbox" id="Navbar-4-checkbox" class="hidden peer">
+  <div class="w-16 h-16 pr-2  pt-4 basis-16 rounded-full  text-white font-bold flex items-center justify-center">
+    <a href="/" class="relative w-20 h-20 text-yellow-200">
+      <span class="w-[20px] text-black h-[20px] mt-5 md:mt-auto">
+        <Icon pack="mdi" name="ring" /> 
+      </span>
+
+    </a>
   </div>
-</header>
+  <ul class="lg:flex lg:translate-x-7 lg:peer-checked:static absolute lg:static font-[100] font-serif
+ -translate-x-[90vh] lg:basis-3/12 justify-evenly  peer-checked:translate-x-0 
+ top-[88px] transition-transform duration-500 left-0 right-0  bg-black lg:bg-transparent ">
+    <li>
+      <a
+      href="/"
+        class="p-6 cursor-pointer flex lg:p-0 lg:hover:bg-inherit hover:bg-gray-500 transition-colors duration-700 ease-in">Home</a>
+    </li>
+    <li><span
+        class="p-6 cursor-pointer flex lg:p-0 lg:hover:bg-inherit hover:bg-gray-500 transition-colors duration-700 ease-in">About us</span>
+    </li>
+    <li><span
+        class="p-6 cursor-pointer flex lg:p-0 lg:hover:bg-inherit hover:bg-gray-500 transition-colors duration-700 ease-in">Terms of use</span>
+    </li>
+    <li><span
+        class="p-6 cursor-pointer flex lg:p-0 lg:hover:bg-inherit hover:bg-gray-500 transition-colors duration-700 ease-in">Contact us</span>
+    </li>
+  </ul>
+  <div class="text-black">
+    <CartIcon client:load />
+
+  </div>
+  <label for="Navbar-4-checkbox"
+    class="lg:hidden w-10 h-1 relative rounded-full bg-transparent after:w-8 after:h-1 after:rounded-full after:bg-black before:w-8 before:h-1 before:rounded-full before:bg-black after:absolute after:top-1.5 before:-top-1.5 before:absolute cursor-pointer peer-checked:before:top-0 peer-checked:after:top-0 peer-checked:after:rotate-45 peer-checked:before:-rotate-45  after:transition-transform after:duration-500 before:transition-transform before:duration-500 ease-in peer-checked:bg-transparent">
+
+  </label>
+
+</nav>

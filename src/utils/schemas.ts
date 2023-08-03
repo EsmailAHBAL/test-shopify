@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { COLLECTIONS } from "./graphql";
 
 export const configSchema = z.object({
   shopifyShop: z.string(),
@@ -44,7 +45,7 @@ export const CartResult = z
   .object({
     id: z.string(),
     cost: z.object({
-      subtotalAmount: MoneyV2Result,
+      totalAmount: MoneyV2Result,
     }),
     checkoutUrl: z.string(),
     totalQuantity: z.number().int(),
@@ -62,11 +63,15 @@ export const VariantResult = z.object({
   price: MoneyV2Result,
 });
 
+export const  Collections = z.object({
+  id:z.string(),title:z.string()
+})
 export const ProductResult = z
   .object({
     id: z.string(),
     title: z.string(),
     handle: z.string(),
+    description: z.string(),
     images: z.object({
       nodes: z.array(ImageResult),
     }),
@@ -74,5 +79,7 @@ export const ProductResult = z
       nodes: z.array(VariantResult),
     }),
     featuredImage: ImageResult.nullable(),
+    collections : z.any()
+   
   })
   .nullable();

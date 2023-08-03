@@ -20,7 +20,7 @@ const emptyCart = {
   checkoutUrl: "",
   totalQuantity: 0,
   lines: { nodes: [] },
-  cost: { subtotalAmount: { amount: "", currencyCode: "" } },
+  cost: { totalAmount: { amount: "", currencyCode: "" } },
 };
 
 // Cart store with persistent state (local storage) and initial value

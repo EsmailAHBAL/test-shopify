@@ -24,7 +24,7 @@ if (!product) {
 const firstVariant = product?.variants.nodes[0];
 setCache.short(Astro);
 ---
-
+ 
 {
   !product ? (
     <NotFoundLayout title="Product not found" message="Product not found" />
@@ -43,15 +43,17 @@ setCache.short(Astro);
           <div class="mt-8 lg:col-span-5 lg:mt-0">
             <ProductInformations
               title={product.title}
+              description={product.description}
+
               price={firstVariant?.price}
             />
 
             <div>
               <AddToCartForm
                 client:load
-                variantId={firstVariant?.id}
-                variantQuantityAvailable={firstVariant?.quantityAvailable}
-                variantAvailableForSale={firstVariant?.availableForSale}
+                variantId={firstVariant?.id as string}
+                variantQuantityAvailable={firstVariant?.quantityAvailable as number}
+                variantAvailableForSale={firstVariant?.availableForSale as boolean}
               />
             </div>
 
@@ -63,7 +65,7 @@ setCache.short(Astro);
       </section>
 
       <section class="container">
-        <ProductReviews />
+        <div class="">...</div>
       </section>
 
       <section class="container">
