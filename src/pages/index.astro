@@ -8,6 +8,7 @@ import { getAllCollections } from "../utils/Functions";
 import { setCache } from "../utils/cache";
 import { getCollec, getProducts } from "../utils/shopify";
 import Serviceoffers from "../components/serviceoffers.astro";
+import Social from "../components/Social.astro";
 const headers = Astro.request.headers;
 const ip = headers.get("x-vercel-forwarded-for") || Astro.clientAddress;
 const c = await getCollec({buyerIP:ip})
@@ -18,7 +19,7 @@ setCache.short(Astro);
 ---
 
 <BaseLayout title={''}>
-<section class="w-full h-full mx-3  lg:max-w-7xl lg:mx-auto my-4 select-none">
+<section class="w-full h-full mx-3  lg:max-w-7xl lg:mx-auto my-4 ">
   
   <div class="md:px-0 px-2">
     <Hero/>
@@ -44,7 +45,9 @@ setCache.short(Astro);
   <div>
     <Serviceoffers />
   </div>
- 
+   <div class="p-5 md:p-2">
+     <Social />
+   </div>
 </section>
 </BaseLayout>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />

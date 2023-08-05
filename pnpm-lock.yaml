@@ -20,6 +20,9 @@ dependencies:
   '@astrojs/vercel':
     specifier: ^3.7.5
     version: 3.8.0(astro@2.10.0)(react@18.2.0)
+  '@astropub/icons':
+    specifier: ^0.2.0
+    version: 0.2.0(astro@2.10.0)
   '@fontsource/arapey':
     specifier: ^5.0.6
     version: 5.0.6
@@ -65,6 +68,9 @@ dependencies:
   react-text-transition:
     specifier: ^3.1.0
     version: 3.1.0(react-dom@18.2.0)(react@18.2.0)
+  simple-icons-astro:
+    specifier: ^9.7.0
+    version: 9.7.0(astro@2.10.0)
   svelte:
     specifier: ^3.59.2
     version: 3.59.2
@@ -267,6 +273,14 @@ packages:
     resolution: {integrity: sha512-mHAOApWyjqSe5AQMOUD9rsZJqbMQqe3Wosb1a40JV6Okvyxj1G6GTlthwYadWCymq/lbgwh0PLiY8Fr4eFxtuQ==}
     dependencies:
       undici: 5.23.0
+    dev: false
+
+  /@astropub/icons@0.2.0(astro@2.10.0):
+    resolution: {integrity: sha512-qM/ldW/9rVHULNOZgz/23Yzgm2r3Iy2JJ1FuvJB6sFU67n61o1ImuXdHiaWSNoEHubD+IUkD9WG0hbhINgszqA==}
+    peerDependencies:
+      astro: '*'
+    dependencies:
+      astro: 2.10.0
     dev: false
 
   /@babel/code-frame@7.22.5:
@@ -4178,6 +4192,14 @@ packages:
 
   /signal-exit@3.0.7:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
+
+  /simple-icons-astro@9.7.0(astro@2.10.0):
+    resolution: {integrity: sha512-Vqm/RIK37tIGX5bKHnmDhVCcSdKzO4+WgvT8PdtJuMAkxqNLuyrxmrN6goz3kMyUBh3gQePH+54lQxCktiZw9w==}
+    peerDependencies:
+      astro: ^2.7.1
+    dependencies:
+      astro: 2.10.0
+    dev: false
 
   /sisteransi@1.0.5:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}

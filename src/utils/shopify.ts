@@ -123,16 +123,8 @@ export const getProductByHandle = async (options: {
     buyerIP
   );
   const { product } = data;
-  console.log(product);
-  
-  
-const collections = product.collections.edges.map((c:any)=> (c.node))  
-    
-
-  const parsedProduct = ProductResult.parse({...product,collections});
-   console.log(parsedProduct);
    
-  return parsedProduct;
+  return product;
 };
 
 export const getProductRecommendations = async (options: {

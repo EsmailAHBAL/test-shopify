@@ -1,4 +1,5 @@
 ---
+import {Icon} from 'astro-icon'
 const Accounts : {name:string,url:string} [] = [
  {name:'facebook',url:''},
  {name:'whatsapp',url:''},
@@ -15,7 +16,8 @@ const Accounts : {name:string,url:string} [] = [
         <p class="first-letter:uppercase first-letter:text-4xl first-letter:px-2 first-letter:font-bold">{a.name}</p>
         
         <div class="w-40 h-60 flex items-end">
-          helo
+         <Icon name={a.name} pack="mdi"/>
+
          </div>     
      </div>
    ))
