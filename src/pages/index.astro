@@ -7,7 +7,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { getAllCollections } from "../utils/Functions";
 import { setCache } from "../utils/cache";
 import { getCollec, getProducts } from "../utils/shopify";
-import '@fontsource/arapey';
 import Serviceoffers from "../components/serviceoffers.astro";
 const headers = Astro.request.headers;
 const ip = headers.get("x-vercel-forwarded-for") || Astro.clientAddress;

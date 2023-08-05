@@ -2,6 +2,7 @@
 import Logo from "./Logo.astro";
 import CartIcon from "./CartIcon.svelte";
 
+import '@fontsource/arapey';
 ---
 
 <nav class="flex justify-between items-center relative border-black border-b-2 py-1 
@@ -14,7 +15,7 @@ import CartIcon from "./CartIcon.svelte";
 
     </a>
   </div>
-  <ul class="lg:flex lg:translate-x-7 lg:peer-checked:static absolute lg:static font-[100] font-serif
+  <ul class="lg:flex lg:translate-x-7 lg:peer-checked:static absolute lg:static font-[100] 
  -translate-x-[90vh] lg:basis-3/12 justify-evenly  peer-checked:translate-x-0 
  top-[88px] transition-transform duration-500 left-0 right-0  bg-black lg:bg-transparent ">
     <li>
@@ -22,14 +23,17 @@ import CartIcon from "./CartIcon.svelte";
       href="/"
         class="p-6 cursor-pointer flex lg:p-0 lg:hover:bg-inherit hover:bg-gray-500 transition-colors duration-700 ease-in">Home</a>
     </li>
-    <li><span
-        class="p-6 cursor-pointer flex lg:p-0 lg:hover:bg-inherit hover:bg-gray-500 transition-colors duration-700 ease-in">About us</span>
+    <li><a
+      href="/about"
+        class="p-6 cursor-pointer flex lg:p-0 lg:hover:bg-inherit hover:bg-gray-500 transition-colors duration-700 ease-in">About us</a>
     </li>
-    <li><span
-        class="p-6 cursor-pointer flex lg:p-0 lg:hover:bg-inherit hover:bg-gray-500 transition-colors duration-700 ease-in">Terms of use</span>
+    <li><a
+      href="/terms"
+        class="p-6 cursor-pointer flex lg:p-0 lg:hover:bg-inherit hover:bg-gray-500 transition-colors duration-700 ease-in">Terms of use</a>
     </li>
-    <li><span
-        class="p-6 cursor-pointer flex lg:p-0 lg:hover:bg-inherit hover:bg-gray-500 transition-colors duration-700 ease-in">Contact us</span>
+    <li><a
+      href="/contact"
+        class="p-6 cursor-pointer flex lg:p-0 lg:hover:bg-inherit hover:bg-gray-500 transition-colors duration-700 ease-in">Contact us</a>
     </li>
   </ul>
   <div class="text-black">
