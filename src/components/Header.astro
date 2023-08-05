@@ -2,7 +2,6 @@
 import Logo from "./Logo.astro";
 import CartIcon from "./CartIcon.svelte";
 
-import '@fontsource/arapey';
 ---
 
 <nav class="flex justify-between items-center relative border-black border-b-2 py-1 
@@ -15,13 +14,13 @@ import '@fontsource/arapey';
 
     </a>
   </div>
-  <ul class="lg:flex lg:translate-x-7 lg:peer-checked:static absolute lg:static font-[100] 
- -translate-x-[90vh] lg:basis-3/12 justify-evenly  peer-checked:translate-x-0 
- top-[88px] transition-transform duration-500 left-0 right-0  bg-black lg:bg-transparent ">
+  <ul class="lg:flex lg:translate-x-10 lg:peer-checked:static absolute lg:static 
+ -translate-x-[90vh] lg:basis-3/6 justify-evenly  peer-checked:translate-x-0 
+ top-[88px] transition-transform duration-500 left-0 right-0  bg-black lg:bg-transparent -tracking-tight font-bold z-50  ">
     <li>
       <a
       href="/"
-        class="p-6 cursor-pointer flex lg:p-0 lg:hover:bg-inherit hover:bg-gray-500 transition-colors duration-700 ease-in">Home</a>
+        class="p-6 cursor-pointer flex lg:p-0  lg:hover:bg-inherit hover:bg-gray-500 transition-colors duration-700 ease-in">Home</a>
     </li>
     <li><a
       href="/about"
