@@ -18,7 +18,7 @@ const { products } = Astro.props as Props;
   <div class="swiper-wrapper w-full h-full "> 
     {
       products.map((item:any)=> (
-      <div class="swiper-slide p-4 flex justify-center items-center w-full absolute"><ProductCard product={item} /></div>
+      <div class="swiper-slide  flex justify-center items-center w-full absolute pr-4 md:pr-0"><ProductCard product={item} /></div>
       ))
    }
   </div>

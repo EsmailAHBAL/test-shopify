@@ -1,6 +1,6 @@
 ---
-import Logo from "./Logo.astro";
 import CartIcon from "./CartIcon.svelte";
+import {Icon} from 'astro-icon'
 
 
 ---
@@ -10,30 +10,34 @@ import CartIcon from "./CartIcon.svelte";
   <input type="checkbox" id="Navbar-4-checkbox" class="hidden peer">
   <div class="w-16 h-16 pr-2  pt-4 basis-16 rounded-full  text-white font-bold flex items-center justify-center">
     <a href="/" class="relative w-20 h-20 text-yellow-200">
-      <span class="w-[20px] text-black h-[20px] mt-5 md:mt-auto">
+      <span class="w-[17px] text-black h-[20px] mt-5 md:mt-auto"
+      >
+      <Icon name="ring" pack="mdi" />
       </span>
 
     </a>
   </div>
   <ul class="lg:flex lg:translate-x-10 lg:peer-checked:static absolute lg:static 
- -translate-x-[90vh] lg:basis-3/6 justify-evenly  peer-checked:translate-x-0 
- top-[88px] transition-transform duration-500 left-0 right-0  bg-black lg:bg-transparent -tracking-tight font-light z-50  ">
+  text-sm
+ -translate-x-[90vh] lg:basis-[30%] justify-evenly  peer-checked:translate-x-0  
+ top-[88px] transition-transform duration-500 left-0 right-0  bg-black lg:bg-transparent
+  -tracking-tight font-extrabold text-gray-500 z-50  ">
     <li>
       <a
       href="/"
-        class="p-6 cursor-pointer flex lg:p-0  lg:hover:bg-inherit hover:bg-gray-500 transition-colors duration-700 ease-in">Home</a>
+        class="lg:headerbutton p-6 cursor-pointer flex lg:p-0  lg:hover:bg-inherit hover:bg-gray-500 transition-colors duration-700 ease-in">Home</a>
     </li>
     <li><a
       href="/about"
-        class="p-6 cursor-pointer flex lg:p-0 lg:hover:bg-inherit hover:bg-gray-500 transition-colors duration-700 ease-in">About us</a>
+        class="lg:headerbutton p-6 cursor-pointer flex lg:p-0 lg:hover:bg-inherit hover:bg-gray-500 transition-colors duration-700 ease-in">About</a>
     </li>
     <li><a
       href="/terms"
-        class="p-6 cursor-pointer flex lg:p-0 lg:hover:bg-inherit hover:bg-gray-500 transition-colors duration-700 ease-in">Terms of use</a>
+        class="lg:headerbutton p-6 cursor-pointer flex lg:p-0 lg:hover:bg-inherit hover:bg-gray-500 transition-colors duration-700 ease-in">Terms of use</a>
     </li>
     <li><a
       href="/contact"
-        class="p-6 cursor-pointer flex lg:p-0 lg:hover:bg-inherit hover:bg-gray-500 transition-colors duration-700 ease-in">Contact us</a>
+        class="p-6 lg:headerbutton cursor-pointer flex lg:p-0 lg:hover:bg-inherit hover:bg-gray-500 transition-colors duration-700 ease-in">Contact us</a>
     </li>
   </ul>
   <div class="text-black">

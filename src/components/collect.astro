@@ -5,9 +5,9 @@ export interface Porps  {
 const {c} = Astro.props as Porps
 const {total,title}=c
 ---
-<div class="border-2 border-black p-2 md:p-5 border-t-0 md:border-l-0 ">
+<div class="border-2 border-black p-2 md:p-5 border-t-0 md:border-l-0 hover:darkmode group rounded-lg mt-2">
  <div class="py-4 text-2xl lg:text-6xl font-extralight ">{title}</div>
  <div class="flex justify-end items-center mt-5">
-  <span class="text-3xl md:text-4xl bg-black rounded-full text-white px-3">{total}</span>
+  <span class="text-3xl md:text-4xl bg-black rounded-full text-white px-3 group-hover:bg-white group-hover:text-black ">{total}</span>
  </div>
 </div>

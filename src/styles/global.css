@@ -14,7 +14,7 @@
   body {
     @apply flex min-h-screen flex-col;
   }
-
+  
   main {
     @apply flex-1;
   }
@@ -25,7 +25,14 @@
   details > summary::-webkit-details-marker {
     display: none;
   }
-
+  .darkmode{
+    @apply bg-black text-white;
+  }
+ .headerbutton {
+  @apply hover:text-gray-900 hover:text-sm;
+  @apply hover:border-b-2 border-black duration-1000 ease-in-out transition-opacity
+  
+ }
   .button {
     @apply flex items-center justify-center rounded-sm border border-black border-x-0;
     @apply bg-white  text-black font-serif;

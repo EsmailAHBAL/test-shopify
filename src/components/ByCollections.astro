@@ -23,7 +23,8 @@ const returnProdcuts = products.filter((p)=> {
   <div class=" mySwiper w-full  my-2 overflow-hidden ">
     <div class="swiper-wrapper w-full p-2">
       {
-    returnProdcuts.map((p)=>     <div class="swiper-slide w-full flex justify-center items-center p-3"><ProductCard product={p}/></div>
+    returnProdcuts.map((p)=>           <div class="swiper-slide  flex justify-center items-center w-full absolute pr-4 md:pr-0"><ProductCard product={p} /></div>
+
  )
   }   
     
