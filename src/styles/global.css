@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 * {
-  font-family: Arapey-Italic, cursive
+  font-family: Arapey, cursive
 }
 
 @layer base {
