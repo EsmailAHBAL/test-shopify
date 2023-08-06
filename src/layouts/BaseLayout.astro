@@ -21,7 +21,9 @@ const { title, description = defaultDesc } = Astro.props as Props;
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.png" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans&family=Lilita+One&family=Roboto+Mono:ital,wght@1,100&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>

@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 * {
-  font-family: Arapey, cursive
+  font-family: 'Alumni Sans', sans-serif;
+font-family: 'Roboto Mono', monospace;
+font-weight: 600
 }
 
 @layer base {
