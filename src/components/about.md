@@ -1,7 +1,4 @@
----
-layout : "../layouts/BaseLayout.astro"
-title: "about us"
----
+
 # Welcome to eGoldHQ!
 
 At **eGoldHQ**, we believe that jewelry is not just an accessory; it is an expression of individuality and a reflection of one's unique style. Our store is dedicated to curating a breathtaking collection of exquisite jewelry pieces that capture the essence of elegance and timelessness. We aim to provide our customers with a delightful shopping experience, combining quality craftsmanship with unparalleled customer service.

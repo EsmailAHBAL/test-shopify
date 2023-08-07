@@ -19,7 +19,7 @@
       fill="none"
       viewBox="0 0 24 24"
       stroke-width="1.5"
-      stroke="currentColor"
+      stroke="#FFD700"
       class="w-7 h-7 sm:w-8 sm:h-8 pointer-events-none"
     >
       <path
@@ -30,7 +30,7 @@
     </svg>
     {#if $cart && $cart.totalQuantity > 0}
       <div
-        class="absolute -right-2 -top-1 sm:-right-1 sm:top-0 text-black border border-black bg-white text-[12px] rounded-full"
+        class="absolute -right-2 -top-1 sm:-right-1 sm:top-0 text-black border border-[#FFD700] bg-white text-[12px] rounded-full"
       >
         <span class="w-5 h-5 flex justify-center text-center items-center font-bold">
           {$cart.totalQuantity}
